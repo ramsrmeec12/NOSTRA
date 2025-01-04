@@ -1,0 +1,46 @@
+#adcontainer {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set a height for the container */
+    overflow: hidden; /* Hide the overflowing image */
+}
+
+/* Image styling */
+#adimg1, #adimg2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* Ensures the image fits the container without zooming */
+    transition: right 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+/* Initially, adimg2 is off-screen */
+#adimg2 {
+    right: -100%;
+}
+
+/* Arrow styling */
+#rightarrow, #leftarrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    z-index: 10;
+}
+
+/* Right arrow position */
+#rightarrow {
+    right: 15px;
+}
+
+/* Left arrow position */
+#leftarrow {
+    left: 15px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    #rightarrow, #leftarrow {
+        height: 30px;
+    }
+}
